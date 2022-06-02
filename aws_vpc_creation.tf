@@ -14,8 +14,6 @@ provider "aviatrix" {
   username                = "admin"
   password                = "Muhammad1234!"
   skip_version_validation = false
-  verify_ssl_certificate  = true
-  path_to_ca_certificate  = "/path/to/ca/cert.crt"
 }
 resource "aviatrix_vpc" "aws_vpc" {
   cloud_type           = 1
