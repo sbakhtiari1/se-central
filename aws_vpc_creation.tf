@@ -24,3 +24,16 @@ resource "aviatrix_vpc" "aws_vpc" {
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
+# Create an Aviatrix AWS Gateway
+resource "aviatrix_gateway" "test_gateway_aws" {
+  cloud_type   = 1
+  account_name = "AWS-Aviatrix"
+  gw_name      = "avtx-gw-1"
+  vpc_id       = "aws-vpc"
+  vpc_reg      = "us-west-1"
+  gw_size      = "t2.micro"
+  subnet       = "10.100.100.0/24"
+  tags         = {
+    name = "value"
+  }
+}
