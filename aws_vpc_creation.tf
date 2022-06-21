@@ -61,3 +61,12 @@ resource "aviatrix_vpc" "aa6_vpc" {
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
+resource "aviatrix_vpc" "aa7_vpc" {
+  cloud_type           = 1
+  account_name         = "AWS-Aviatrix"
+  region               = "us-west-1"
+  name                 = "aa7-vpc"
+  cidr                 = "10.107.0.0/16"
+  aviatrix_transit_vpc = false
+  aviatrix_firenet_vpc = false
+}
