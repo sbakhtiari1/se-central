@@ -34,12 +34,12 @@ resource "aviatrix_vpc" "aa2_vpc" {
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
-resource "aviatrix_vpc" "aa3_vpc" {
+resource "aviatrix_vpc" "aa4_vpc" {
   cloud_type           = 1
   account_name         = "AWS-Aviatrix"
   region               = "us-west-1"
-  name                 = "aa2-vpc"
-  cidr                 = "10.103.0.0/16"
+  name                 = "aa4-vpc"
+  cidr                 = "10.104.0.0/16"
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
