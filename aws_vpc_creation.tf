@@ -34,3 +34,17 @@ resource "aviatrix_vpc" "aa10_vpc" {
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }  
+resource "aviatrix_spoke_gateway" "test_spoke_gateway_aws" {
+  cloud_type                        = 1
+  account_name                      = "my-aws"
+  gw_name                           = "spoke-gw-aws"
+  vpc_id                            = "vpc-0dc8bed4b89d53e8c"
+  vpc_reg                           = "us-west-1"
+  gw_size                           = "t2.micro"
+  subnet                            = "10.110.1.0/24"
+  single_ip_snat                    = false
+  manage_transit_gateway_attachment = false
+  tags                              = {
+    name = "value"
+  }
+}
