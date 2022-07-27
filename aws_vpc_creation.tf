@@ -48,17 +48,4 @@ resource "aviatrix_spoke_gateway" "test_spoke_gateway_aws" {
     name = "value"
   }
 }
-resource "aviatrix_spoke_gateway" "test_spoke_gateway_aws1" {
-  cloud_type                        = 1
-  account_name                      = "AWS-Aviatrix"
-  gw_name                           = "spoke-gw-aws"
-  vpc_id                            = "vpc-0dc8bed4b89d53e8c"
-  vpc_reg                           = "us-west-1"
-  gw_size                           = "t2.micro"
-  subnet                            = "10.110.32.0/20"
-  single_ip_snat                    = false
-  manage_transit_gateway_attachment = false
-  tags                              = {
-    name = "value"
-  }
-}
+
