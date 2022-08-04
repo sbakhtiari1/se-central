@@ -15,8 +15,29 @@ provider "aviatrix" {
   password                = "Muhammad1234!"
   skip_version_validation = false
 }
+module "azure_transit" {
+  source  = "terraform-aviatrix-modules/mc-transit/aviatrix"
+  version = "2.2.0"
 
-resource "aviatrix_vpc" "aa7_vpc" {
+  cloud   = "azure"
+  region  = "East US"
+  cidr    = "10.1.0.0/23"
+  account = "Azure-Aviatrix"
+}
+module "spoke_azure_1" {
+  source  = "terraform-aviatrix-modules/mc-spoke/aviatrix"
+  version = "1.3.0"
+
+  cloud           = "Azure"
+  name            = "App1"
+  cidr            = "10.1.0.0/20"
+  region          = "East US"
+  account         = "Azure-Aviatrix"
+  transit_gw      = "avx-us-east-transit"
+  security_domain = "green"
+}
+  
+  resource "aviatrix_vpc" "aa7_vpc" {
   cloud_type           = 1
   account_name         = "AWS-Aviatrix"
   region               = "us-west-1"
