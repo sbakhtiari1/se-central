@@ -26,7 +26,7 @@ module "azure_transit" {
 }
 module "spoke_azure_1" {
   source  = "terraform-aviatrix-modules/mc-spoke/aviatrix"
-  version = "1.3.0"
+  version = "1.2.4"
 
   cloud           = "Azure"
   name            = "App1"
