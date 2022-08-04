@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aviatrix = {
       source = "AviatrixSystems/aviatrix"
-      version = "2.22.0"
+      version = "2.1.6"
     }
   }
 }
@@ -17,7 +17,7 @@ provider "aviatrix" {
 }
 module "azure_transit" {
   source  = "terraform-aviatrix-modules/mc-transit/aviatrix"
-  version = "2.2.0"
+  version = "2.1.6"
 
   cloud   = "azure"
   region  = "East US"
