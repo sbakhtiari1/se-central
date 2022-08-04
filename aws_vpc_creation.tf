@@ -29,4 +29,15 @@ resource "aviatrix_transit_gateway" "test_transit_gateway_azure" {
   ha_gw_size        = "Standard_B1ms"
   connected_transit = true
 }
- 
+resource "aviatrix_spoke_gateway" "test_spoke_gateway_azure" {
+  cloud_type                        = 8
+  account_name                      = "Azure-Aviatrix"
+  gw_name                           = "spoke-gw-01"
+  vpc_id                            = "vnet_name:rg_name:resource_guid1"
+  vpc_reg                           = "West US"
+  gw_size                           = "Standard_B1ms"
+  subnet                            = "10.13.0.0/24"
+  zone                              = "az-1"
+  single_ip_snat                    = false
+  manage_transit_gateway_attachment = false
+} 
